@@ -141,6 +141,7 @@ def run_fit_a_ar1(x, w):
         a = results.params[1]
 
         xs[i] = a
+    return xs
 
 ## EWS functions for timeseries with missing values
 
