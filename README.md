@@ -1,4 +1,4 @@
-This is the github repository for the Nature Communications paper "Uncertainties in critical slowing down indicators of observation-based fingerprints of the Atlantic Overturning Circulation".
+This is the github repository for the Nature Communications paper "Uncertainties in critical slowing down indicators of observation-based fingerprints of the Atlantic Overturning Circulation". https://www.nature.com/articles/s41467-023-44046-9
 
 If you have any questions please email maya.ben-yami@tum.de
 
