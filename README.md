@@ -21,5 +21,23 @@ The folder analysis_scripts contains python and bash scripts which introduce all
 * get_trends.py - calculates the linear trend of input timeseries using xarray
 * process_files.sh - all the various cdo scripts used to pre-process files (select areas, get annual average, etc.)
 
+## Examples
 
+Here are two examples of the work processes:
+
+1. To get the file with the number of salinity profiles, you need to:
+
+* Download EN.4.2.2.p.analysis.g10.202404.nc.gz and EN.4.2.2.p.profiles.g10.202404.nc.gz from https://www.metoffice.gov.uk/hadobs/en4/download-en4-2-2.html
+* Extract the files from the zip
+* Run `cdo mergetime -selvar,salinity EN.4.2.2.f.analysis.l09*.nc salinity.nc` to get the merged salinity analysis file
+* Run `cdo -L vertmean -sellevidx,1/19 salinity.nc salinity_dmean.nc` to get the file of the mean salinities in the top 300m
+* Change the file locations in count_profiles.py to the locations on your computer
+* Run count_profiles.py
+
+2. To get the lambda time series of the HadSST4 AMOC SST index from Figure 1a) and 1d), you need to:
+
+* Download HadSST.4.0.1.0_median.nc  from https://www.metoffice.gov.uk/hadobs/hadsst4/data/download.html
+* Run `cdo -L sub -fldmean -sellonlatbox,-55,-20,46,61 HadSST.4.0.1.0_median.nc -fldmean HadSST.4.0.1.0_median.nc HadSST.4.0.1.0_median_amoc.nc` to get the AMOC index
+* Run `cdo -L divdpy -yearsum -muldpm HadSST.4.0.1.0_median_amoc.nc HadSST.4.0.1.0_median_amoc_ymean.nc` to get the annual average
+* And then you can write your own python code to apply lambda_wrapper_rmean() from EWS_wrapper.py to the time series from HadSST.4.0.1.0_median_amoc_ymean.nc
 
