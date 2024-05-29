@@ -32,6 +32,7 @@ Here are two examples of the work processes:
 * Run `cdo mergetime -selvar,salinity EN.4.2.2.f.analysis.l09*.nc salinity.nc` to get the merged salinity analysis file
 * Run `cdo -L vertmean -sellevidx,1/19 salinity.nc salinity_dmean.nc` to get the file of the mean salinities in the top 300m
 * Change the file locations in count_profiles.py to the locations on your computer
+* Adjust the `[:-1]` in line 6 to get only complete years, and the maximum year in line 14 to match your data
 * Run count_profiles.py
 
 2. To get the lambda time series of the HadSST4 AMOC SST index from Figure 1a) and 1d), you need to:
