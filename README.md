@@ -29,7 +29,7 @@ Here are two examples of the work processes:
 
 * Download EN.4.2.2.p.analysis.g10.202404.nc.gz and EN.4.2.2.p.profiles.g10.202404.nc.gz from https://www.metoffice.gov.uk/hadobs/en4/download-en4-2-2.html
 * Extract the files from the zip
-* Run `cdo mergetime -selvar,salinity EN.4.2.2.f.analysis.l09*.nc salinity.nc` to get the merged salinity analysis file
+* Run `cdo mergetime -selvar,salinity EN.4.2.2.f.analysis.g10*.nc salinity.nc` to get the merged salinity analysis file
 * Run `cdo -L vertmean -sellevidx,1/19 salinity.nc salinity_dmean.nc` to get the file of the mean salinities in the top 300m
 * Change the file locations in count_profiles.py to the locations on your computer
 * Adjust the `[:-1]` in line 6 to get only complete years, and the maximum year in line 14 to match your data
