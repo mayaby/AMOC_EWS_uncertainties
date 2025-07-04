@@ -27,7 +27,7 @@ Here are two examples of the work processes:
 
 1. To get the file with the number of salinity profiles, you need to:
 
-* Download EN.4.2.2.p.analysis.g10.202404.nc.gz and EN.4.2.2.p.profiles.g10.202404.nc.gz from https://www.metoffice.gov.uk/hadobs/en4/download-en4-2-2.html
+* Download both the analysis and profiles of the EN4.2.2 dataset from https://www.metoffice.gov.uk/hadobs/en4/download-en4-2-2.html, for example using the EN.4.2.2.profiles.g10.download-list.txt and EN.4.2.2.analyses.g10.download-list.txt files (note that the type of correction indivated in the g10/l09/c13 file name only applies to temperature profiles, and so any of these can be chosen for the salinity analysis)
 * Extract the files from the zip
 * Run `cdo mergetime -selvar,salinity EN.4.2.2.f.analysis.g10*.nc salinity.nc` to get the merged salinity analysis file
 * Run `cdo -L vertmean -sellevidx,1/19 salinity.nc salinity_dmean.nc` to get the file of the mean salinities in the top 300m
